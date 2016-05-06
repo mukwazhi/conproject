@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Services {% endblock %}
+{% block content %}
+<div class="services-main">
+    <div class="container">
+<h1>Featured Services</h1>
+    {% for service in services %}
+    <div class="col-md-3 services">
+            {% for item in service.servicesimage_set.all %}
+          <a href="{% url 'service_detail' service.slug %}">
+        <img class="img-circle" src="{{MEDIA_URL}}{{item.image}}" style="height: 100px; width: 100px; "></a>
+            <h4>{{service.title}}</h4>
+            {% endfor %}
+            <br>
+        </div>
+    {% endfor %}
+</div>
+    </div>
+{% endblock %}

@@ -1,0 +1,186 @@
+/*------------------------------
+    divider styling and animations
+----------------------------------*/
+.divider{
+    background-color: black;
+    height: 80px;
+    width: 100%;
+     margin: auto;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 4s;
+}
+.divider h1 {
+    font-family: 'Lora';
+    text-align: left;
+    font-weight: medium;
+    color: #fff;
+    margin: auto;
+    font-style: italic;
+}
+@-webkit-keyframes example {
+    from {background-color: grey;}
+    to {background-color: yellow;}
+}
+@keyframes example {
+    from {background-color: blue;}
+    to {background-color: black;}
+}
+
+/* ---------------------------------------------
+services section animations
+------------------------------------------------*/
+img.img-circle{
+    transition: transform 1s ease;
+    -webkit-transition: -webkit-transform 1s ease;
+    -moz-transition: -moz-transform 1s ease;
+    -o-transition: -o-transform 1s ease;
+}
+img.img-circle:hover {
+    transform: rotateY(360deg);
+    transform: rotateY(360deg);
+    -webkit-transform: -webkit-rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+}
+.marketing img{
+      display: block;
+      margin: 0px auto;
+}
+.marketing .row p{
+    text-align: justify;
+}
+.marketing h2{
+    text-align: center;
+    font-family: 'lora';
+}
+.marketing h1{
+    text-align: center;
+    font-family: 'lora';
+}
+/* Services description styling*/
+.services{
+    text-align: justify;
+    font-family: Helvetica, Arial, sans-serif;
+ }
+.services-main h1{
+    margin-top: 55px;
+    text-align: center;
+    font-family: 'lora';
+}
+.services h3{
+    font-family: 'lora';
+    text-align: center;
+    font-weight: 700;
+}
+
+.services img{
+    display: block;
+    margin: 0px auto;
+ }
+
+
+/* -------------------------------
+    portfolio gallery styling
+----------------------------------*/
+.portfolio{
+    width: 100%;
+    background-color: #eee;
+}
+.portfolio h2{
+    font-family: 'lora';
+    color: black;
+    margin: auto;
+    }
+.portfolio p{
+    text-align: justify;
+    color: black;
+    margin: auto;
+    }
+.portfolio .container{
+    padding: 0;
+}
+ figure img:hover{
+    box-shadow: 0.5em 0.5em 1em #eee;
+    transform: rotate(-10deg);
+ }
+ .gallery{
+    padding-left: 0;
+ }
+
+ /*--------------------------
+    Why us section styling
+ -----------------------------*/
+ .why-us{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.why-us .container{
+    padding: 0;
+}
+ .why-us h1{
+    font-family: 'Lora';
+    font-size: 48px;
+    color: #fff;
+    line-height: 55px;
+    font-style: italic;
+    margin-bottom: 0px;
+    text-align: center;
+ }
+.why-us h3{
+    text-align: center;
+    font-style: italic;
+    color: #fff;
+}
+.why-us p{
+    list-style-type: none;
+    font-family: 'Lora';
+    color: #fff;
+    float: left;
+    padding-left: 5px;
+    font-size: 1.1em;
+    text-align: justify;
+    font-size: 16px;
+}
+article.top-box{
+    box-sizing: border-box;
+     border: 1em solid white;
+     height: auto;
+     margin-top: -100px;
+     background: white;
+}
+/*----------------------------
+    about us styling
+-------------------------------*/
+.about{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/*Service detail */
+.container.detail{
+    margin-top: 60px;
+}
+.service-description{
+    text-align: justify;
+}
+.contact{
+    text-align: justify;
+}
+.page-header h1{
+    font-family: 'Lora';
+    font-size: 48px;
+}
+.service-description h2{
+    font-family: 'Lora';
+}
+.contact h2{
+     font-family: 'Lora';
+}

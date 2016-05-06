@@ -1,0 +1,14 @@
+.body2{
+    background-color: grey;
+}
+.container.gallery{
+     margin-top: 50px;
+}
+
+.container.gallery h1{
+    font-family: 'lora';
+    font-size: 48px;
+    line-height: 55px;
+    font-style: italic;
+    margin-bottom: 0px;
+}

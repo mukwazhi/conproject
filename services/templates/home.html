@@ -1,0 +1,135 @@
+{% extends 'base.html'%}
+{% load staticfiles %}
+{% block title %} Home {% endblock %}
+
+  {% block content %}
+    <!-- Carousel -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+       <ol class="carousel-indicators">
+         {% for slidr in slider %}
+         <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.counter }}"
+             {% if forloop.first %}class="active"{% endif %}></li>
+         {% endfor %}
+       </ol>
+
+      <div class="carousel-inner" role="listbox">
+          {% for slidr in slider %}
+             <div class="item {% if forloop.first %}active{% endif %}">
+                 <img class="slide-image" src="{{ MEDIA_URL }}{{ slidr.slider_image }}" alt="...">
+             </div>
+          {% endfor %}
+        </div>
+
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+     <div class="divider">
+         <div class="container" >
+            <br>
+            <H1><b>Construction is our way of life ~ Help us live it!!</b>
+         <a class="btn btn-default pull-right" href="#" role="button">Contact Us &raquo;</a></H1>
+             </div>
+        </div>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    {% for slidr in slider %}
+        {% if slidr.display %}
+     <div class="marketing" style="background-image: url('{{MEDIA_URL}}{{slidr.slider_image}}'); ">
+         <div class=container">
+         {% endif %}
+         {% endfor %}
+        <h1><b>Featured Services</b></h1>
+     <!-- Three columns of text below the carousel -->
+      <div class="row" style="margin-top: 10px;">
+          {% for service in services %}
+          {% if service.display %}
+        <div class="col-md-3" >
+            {% for item in service.servicesimage_set.all %}
+          <a href="{% url 'service_detail' service.slug  %}" >
+              <img class="img-circle" src="{{ MEDIA_URL }}{{ item.image }}" alt="Generic placeholder image" width="140" height="140"></a>
+            {% endfor %}
+          <h4>{{ service.title }}</h4>
+        </div><!-- /.col-lg-4 -->
+        {% endif %}
+        {% endfor %}
+          <a class="btn btn-default pull-right" href="{% url 'services'%}" role="button" style="width: 100%; opacity: 40%">View Services
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></H1>
+      </div><!-- /.row -->
+         </div>
+         </div>
+
+         <div class="portfolio">
+             <br>
+                 <div class="container">
+                 <div class="col-md-3 gallery">
+                 <h2><b>Project Gallery</b></h2>
+                     <br>
+                    <p>View our project gallery that showcases our expertise in the construction Industry,
+                        You met the most popular CSS selectors on page 238. There are also
+                        a set of attribute selectors that allow you to create rules that apply to
+                        elements that have an attribute with a specific value</p>
+                     <br>
+                        <a class="btn btn-default" href="{% url 'gallery' %}" role="button">View Gallery &raquo;</a>
+                 </div>
+                 <div class="col-md-9" >
+                     {% for item in portfolio %}
+                     {% if item.display %}
+                     <div class="col-md-3">
+                         <figure>
+                         <a href="#" ><img src="{{MEDIA_URL}}{{item.project_image}}" width="200" height="150"></a>
+                         <figcaption>{{item.project_title}}</figcaption>
+                         </figure>
+                     </div>
+                     {% endif %}
+                     {% endfor %}
+                 </div>
+             </div>
+         </div>
+
+        {% for slidr in slider %}
+        {% if slidr.display %}
+         <div class="why-us" style="background-image: url('{{MEDIA_URL}}{{slidr.slider_image}}'); height: 400px; ">
+             <div class="container">
+                 <h1><b>Why Choose Us</b></h1>
+                     <div class="col-md-3 ">
+                        <h3>On time Delivery </h3>
+                         <p>View our project gallery that showcases our expertise in the construction Industry,
+                        You met the most popular CSS selectors on page 238. There are also
+                        a set of attribute selectors that allow you to create rules that apply to
+                        elements that have an attribute with a specific value</p>
+                     </div>
+                 <div class="col-md-3 ">
+                        <h3>Professionalism </h3>
+                         <p>View our project gallery that showcases our expertise in the construction Industry,
+                        You met the most popular CSS selectors on page 238. There are also
+                        a set of attribute selectors that allow you to create rules that apply to
+                        elements that have an attribute with a specific value</p>
+                     </div>
+                 <div class="col-md-3 ">
+                        <h3>Goal Oriented </h3>
+                         <p>View our project gallery that showcases our expertise in the construction Industry,
+                        You met the most popular CSS selectors on page 238. There are also
+                        a set of attribute selectors that allow you to create rules that apply to
+                        elements that have an attribute with a specific value</p>
+                     </div>
+                 <div class="col-md-3 ">
+                        <h3>Efficient </h3>
+                         <p>View our project gallery that showcases our expertise in the construction Industry,
+                        You met the most popular CSS selectors on page 238. There are also
+                        a set of attribute selectors that allow you to create rules that apply to
+                        elements that have an attribute with a specific value</p>
+                     </div>
+             </div>
+             {% endif %}
+             {% endfor %}
+         </div>
+      {% endblock %}

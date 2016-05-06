@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% block title %}Detailed Info{% endblock %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container detail">
+     <div class="page-header">
+         <h1>{{service.title}}</h1>
+     </div>
+
+    <section >
+        <div class="col-md-8 service-description">
+        <article>
+            <header>
+                <h2>{{service.title}}</h2>
+                <p>{{service.description|safe}}</p>
+            </header>
+        </article>
+          </div>
+        <div class="col-md-4 contact">
+        <article>
+            <h2>Contact Us</h2>
+            <p>If you are intrested in this service, Please fell free to contact us</p>
+            <a href="#"><h5><span class="glyphicon glyphicon-envelope" style="padding-right: 10px; color: #F96;"></span>Email Us</h5></a>
+            <a href="#"><h5><span class="glyphicon glyphicon-map-marker" style="padding-right: 10px; color: #337AB7"></span>Visit Us</h5></a>
+            <a href="#"><h5><span class="glyphicon glyphicon-earphone" style="padding-right: 10px; color: #337AB7"></span>Call Us</h5></a>
+            <a href="#"> <h5><i class="fa fa-skype " aria-hidden="true"></i> Skype Us</h5></a>
+        </article>
+        </div>
+
+        <div class="col-md-12">
+
+            <br>
+            <h1></h1>
+
+        </div>
+
+    </section>
+    </div>
+
+{% endblock %}

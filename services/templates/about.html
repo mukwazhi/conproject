@@ -1,0 +1,57 @@
+{%extends 'base.html'%}
+{% block title %} About Us {% endblock %}
+{% load staticfiles %}
+
+{% block content %}
+    {% for slider in slider %}
+    {% if slider.featured %}
+    <div class="jumbotron about" style="background-image: url('{{MEDIA_URL}}{{slider.slider_image}}'); height: 400px; ">
+      <div class="container" >
+        <h1 class="display-3">Construction & Co </h1>
+
+      </div>
+    </div>
+{% endif %}
+{% endfor %}
+    <div class="container">
+
+            <article class="top-box">
+                <section>
+                    <h1>About Us</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel varius elit, at rutrum nisl.
+                        Maecenas maximus a mauris at dapibus. Phasellus ac fermentum velit. Vestibulum dapibus augue id
+                        diam fringilla auctor ac a metus. Nulla aliquam vestibulum pretium. Phasellus imperdiet egestas
+                        massa a vestibulum. Etiam lacinia nisl arcu. Maecenas lacinia tortor et tincidunt ultrices.
+                        Donec mi eros, aliquet nec volutpat ac, dignissim a quam. Curabitur egestas nisi augue, quis
+                        posuere odio consequat sed. Nam dictum non nibh ut lobortis. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Fusce elementum tortor a sapien pharetra, eget pellentesque
+                        enim maximus. Nam dictum arcu ac iaculis sodales. Nunc eu ligula feugiat, dapibus orci tristique,
+                        facilisis urna.</p>
+                </section>
+                <section>
+                    <h2>History</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel varius elit, at rutrum nisl.
+                        Maecenas maximus a mauris at dapibus. Phasellus ac fermentum velit. Vestibulum dapibus augue id
+                        diam fringilla auctor ac a metus. Nulla aliquam vestibulum pretium. Phasellus imperdiet egestas
+                        massa a vestibulum. Etiam lacinia nisl arcu. Maecenas lacinia tortor et tincidunt ultrices.
+                        Donec mi eros, aliquet nec volutpat ac, dignissim a quam. Curabitur egestas nisi augue, quis
+                        posuere odio consequat sed. Nam dictum non nibh ut lobortis. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Fusce elementum tortor a sapien pharetra, eget pellentesque
+                        enim maximus. Nam dictum arcu ac iaculis sodales. Nunc eu ligula feugiat, dapibus orci tristique,
+                        facilisis urna.</p>
+                </section>
+                <section>
+                    <h2>Awards</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel varius elit, at rutrum nisl.
+                        Maecenas maximus a mauris at dapibus. Phasellus ac fermentum velit. Vestibulum dapibus augue id
+                        diam fringilla auctor ac a metus. Nulla aliquam vestibulum pretium. Phasellus imperdiet egestas
+                        massa a vestibulum. Etiam lacinia nisl arcu. Maecenas lacinia tortor et tincidunt ultrices.
+                        Donec mi eros, aliquet nec volutpat ac, dignissim a quam. Curabitur egestas nisi augue, quis
+                        posuere odio consequat sed. Nam dictum non nibh ut lobortis. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Fusce elementum tortor a sapien pharetra, eget pellentesque
+                        enim maximus. Nam dictum arcu ac iaculis sodales. Nunc eu ligula feugiat, dapibus orci tristique,
+                        facilisis urna..</p>
+                </section>
+            </article>
+    </div>
+{% endblock %}

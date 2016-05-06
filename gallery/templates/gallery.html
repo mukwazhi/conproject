@@ -1,0 +1,69 @@
+{% extends 'gallery_base.html'%}
+{% block title %} Gallery {% endblock %}
+{% load staticfiles %}
+
+{% block gallery-content %}
+<div class="body2">
+<div class="container gallery">
+    <h1>Our Project Gallery </h1>
+    <blockquote>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum."</p>
+    </blockquote>
+
+    <!-- The container for the list of example images -->
+    <div id="links">
+    {% for item in portfolio %}
+        <div class="col-md-3" style="margin-bottom: 2px;">
+            <figure>
+            <a href="{{MEDIA_URL}}{{item.project_image}}" title="{{item.project_title}}" data-gallery>
+                <img src="{{MEDIA_URL}}{{item.project_image}}" width="200" height="150">
+            </a>
+                <figcaption>{{item.project_title}}</figcaption>
+            </figure>
+        </div>
+    {% endfor %}
+    </div>
+
+    <br>
+</div>
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <br>
+    </div>
+{% endblock %}
