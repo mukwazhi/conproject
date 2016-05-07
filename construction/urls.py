@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'^gallery/', gallery.views.gallery, name='gallery'),
     url(r'^service_detail/(?P<slug>[\w-]+)/$', services.views.service_detail, name='service_detail'),
 ]
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
