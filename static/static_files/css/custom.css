@@ -75,8 +75,11 @@ img.img-circle:hover {
     font-family: Helvetica, Arial, sans-serif;
  }
 .services-main{
-     background-color: #eee;
-     background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;color: #fff;
 }
 .services-main h1{
     margin-top: 55px;
@@ -175,6 +178,14 @@ article.top-box{
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+}
+h1.display-3{
+    font-family: 'Lora';
+    color: white;
+}
+h1.display-3 h1{
+    font-family: 'Lora';
+    color: white;
 }
 .top-box h1{
     font-family: 'Lora';

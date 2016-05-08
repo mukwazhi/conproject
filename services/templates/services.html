@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% block title %} Services {% endblock %}
+{% load staticfiles %}
 {% block content %}
-<div class="services-main">
+
+{% for slider in slider %}
+    {% if slider.about_display %}
+    <div class="services-main" style="background-image: url('{{MEDIA_URL}}{{slider.slider_image}}');">
+    {% endif %}
+{% endfor %}
+
     <div class="container">
 <h1>Featured Services</h1>
     {% for service in services %}

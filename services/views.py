@@ -20,9 +20,11 @@ def home(request):
 def services(request):
     services = Service.objects.all()
     images = ServicesImage.objects.all()
+    slider = DisplayImage.objects.all()
     context = {
         'services': services,
         'images': images,
+        'slider':slider
     }
     return render(request, 'services.html', context)
 

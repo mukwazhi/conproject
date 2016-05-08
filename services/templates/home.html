@@ -8,16 +8,20 @@
       <!-- Indicators -->
        <ol class="carousel-indicators">
          {% for slidr in slider %}
+            {% if slidr.active_slides %}
          <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.counter }}"
              {% if forloop.first %}class="active"{% endif %}></li>
+           {% endif %}
          {% endfor %}
        </ol>
 
       <div class="carousel-inner" role="listbox">
           {% for slidr in slider %}
+          {% if slidr.active_slides %}
              <div class="item {% if forloop.first %}active{% endif %}">
                  <img class="slide-image" src="{{ MEDIA_URL }}{{ slidr.slider_image }}" alt="...">
              </div>
+          {% endif %}
           {% endfor %}
         </div>
 
@@ -35,14 +39,14 @@
          <div class="container" >
             <br>
             <H1><b>Construction is our way of life ~ Help us live it!!</b>
-         <a class="btn btn-default pull-right" href="#" role="button">Contact Us &raquo;</a></H1>
+         <a class="btn btn-default pull-right" href="{% url 'contact'%}" role="button">Contact Us &raquo;</a></H1>
              </div>
         </div>
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
     {% for slidr in slider %}
-        {% if slidr.display %}
+        {% if slidr.home_background_display %}
      <div class="marketing" style="background-image: url('{{MEDIA_URL}}{{slidr.slider_image}}'); ">
          <div class=container">
          {% endif %}
@@ -73,10 +77,11 @@
                  <div class="col-md-3 gallery">
                  <h2><b>Project Gallery</b></h2>
                      <br>
-                    <p>View our project gallery that showcases our expertise in the construction Industry,
-                        You met the most popular CSS selectors on page 238. There are also
-                        a set of attribute selectors that allow you to create rules that apply to
-                        elements that have an attribute with a specific value</p>
+                    <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de
+                        distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem
+                        Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une
+                        distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français
+                        standard.</p>
                      <br>
                         <a class="btn btn-default" href="{% url 'gallery' %}" role="button">View Gallery &raquo;</a>
                  </div>
@@ -85,7 +90,7 @@
                      {% if item.display %}
                      <div class="col-md-3">
                          <figure>
-                         <a href="#" ><img src="{{MEDIA_URL}}{{item.project_image}}" width="200" height="150"></a>
+                         <a href="{% url 'gallery'%}" ><img src="{{MEDIA_URL}}{{item.project_image}}" width="200" height="150"></a>
                          <figcaption>{{item.project_title}}</figcaption>
                          </figure>
                      </div>
@@ -96,37 +101,37 @@
          </div>
 
         {% for slidr in slider %}
-        {% if slidr.display %}
+        {% if slidr.home_background_display %}
          <div class="why-us" style="background-image: url('{{MEDIA_URL}}{{slidr.slider_image}}'); height: 400px; ">
              <div class="container">
                  <h1><b>Why Choose Us</b></h1>
                      <div class="col-md-3 ">
                         <h3>On time Delivery </h3>
-                         <p>View our project gallery that showcases our expertise in the construction Industry,
-                        You met the most popular CSS selectors on page 238. There are also
-                        a set of attribute selectors that allow you to create rules that apply to
-                        elements that have an attribute with a specific value</p>
+                         <p>'Lorem Ipsum' vous conduira vers
+                        de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont
+                        apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter
+                        de petits clins d'oeil, voire des phrases embarassantes)</p>
                      </div>
                  <div class="col-md-3 ">
                         <h3>Professionalism </h3>
-                         <p>View our project gallery that showcases our expertise in the construction Industry,
-                        You met the most popular CSS selectors on page 238. There are also
-                        a set of attribute selectors that allow you to create rules that apply to
-                        elements that have an attribute with a specific value</p>
+                         <p>'Lorem Ipsum' vous conduira vers
+                        de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont
+                        apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter
+                        de petits clins d'oeil, voire des phrases embarassantes)</p>
                      </div>
                  <div class="col-md-3 ">
                         <h3>Goal Oriented </h3>
-                         <p>View our project gallery that showcases our expertise in the construction Industry,
-                        You met the most popular CSS selectors on page 238. There are also
-                        a set of attribute selectors that allow you to create rules that apply to
-                        elements that have an attribute with a specific value</p>
+                         <p>'Lorem Ipsum' vous conduira vers
+                        de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont
+                        apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter
+                        de petits clins d'oeil, voire des phrases embarassantes</p>
                      </div>
                  <div class="col-md-3 ">
                         <h3>Efficient </h3>
-                         <p>View our project gallery that showcases our expertise in the construction Industry,
-                        You met the most popular CSS selectors on page 238. There are also
-                        a set of attribute selectors that allow you to create rules that apply to
-                        elements that have an attribute with a specific value</p>
+                         <p>'Lorem Ipsum' vous conduira vers
+                        de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont
+                        apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter
+                        de petits clins d'oeil, voire des phrases embarassantes)</p>
                      </div>
              </div>
              {% endif %}

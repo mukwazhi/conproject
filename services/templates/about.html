@@ -1,11 +1,11 @@
 {%extends 'base.html'%}
 {% block title %} About Us {% endblock %}
-{% load staticfiles %}
+
 
 {% block content %}
     {% for slider in slider %}
-    {% if slider.featured %}
-    <div class="jumbotron about" style="background-image: url('{{MEDIA_URL}}{{slider.slider_image}}'); height: 400px; ">
+    {% if slider.about_display %}
+    <div class="jumbotron about" style="background-image: url('{{MEDIA_URL}}{{slider.slider_image}}'); height: 400px;">
       <div class="container" >
         <h1 class="display-3">Construction & Co </h1>
 

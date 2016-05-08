@@ -6,12 +6,12 @@ class DisplayImage(models.Model):
     slider_image = models.ImageField(upload_to='slider/images/')
     header_text = models.CharField(max_length=120, null=True, blank=True)
     text = models.CharField(max_length=120, null=True, blank=True)
-    featured = models.BooleanField(default=False)
-    active = models.BooleanField(default=True)
-    display = models.BooleanField(default=False)
+    about_display = models.BooleanField(default=False)
+    active_slides = models.BooleanField(default=True)
+    home_background_display = models.BooleanField(default=False)
 
     def __str__(self):
-        return str(self.active)
+        return str(self.active_slides)
 
 
 class Logo(models.Model):
