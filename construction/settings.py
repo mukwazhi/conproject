@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g4j#^zb@epi!vvi1ffp!e!**x7zsn$#5=kskfk4dbiz%y9y)!#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['mukwazhi.pythonanywhere.com']
 
 # Application definition
 
@@ -109,13 +109,13 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder"
 ]
 #console
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'mukwazhib'
-EMAIL_HOST_PASSWORD = 'sendgrid_password'
+EMAIL_HOST_PASSWORD = 'Ericmukwazhi31'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -140,7 +140,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
+#MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
+MEDIA_ROOT = '/home/mukwazhi/conproject/static/media'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static", 'static_files'),
